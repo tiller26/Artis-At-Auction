@@ -1,0 +1,717 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69712EE9-979C-400E-89D9-2CC24955BC5C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project_Backup</RootNamespace>
+    <AssemblyName>Project_Backup</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AboutArtisans.aspx" />
+    <Content Include="ActiveBids.aspx" />
+    <Content Include="AddAccessory.aspx" />
+    <Content Include="AddArt.aspx" />
+    <Content Include="AddClothing.aspx" />
+    <Content Include="AddFunds.aspx" />
+    <Content Include="AddProduct.aspx" />
+    <Content Include="AlmostThere.aspx" />
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\cookiealert.css" />
+    <Content Include="assets\css\datepicker.min.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\jquery.datetimepicker.min.css" />
+    <Content Include="assets\css\linearicons.css" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\owl.carousel.min.css" />
+    <Content Include="assets\css\owl.video.play.html" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\slick.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\themify-icons.css" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="assets\fonts\Linearicons-Free54e9.html" />
+    <Content Include="assets\fonts\Linearicons-Free54e9.svg" />
+    <Content Include="assets\fonts\themify9f24.svg" />
+    <Content Include="assets\img\about-page\banner\banner-bg.png" />
+    <Content Include="assets\img\about-page\news\news.png" />
+    <Content Include="assets\img\about-page\news\news2.png" />
+    <Content Include="assets\img\about-page\service\service-1.png" />
+    <Content Include="assets\img\about-page\service\service-2.png" />
+    <Content Include="assets\img\about-page\service\service-3.png" />
+    <Content Include="assets\img\about-page\story\story.png" />
+    <Content Include="assets\img\about-page\team\nav-1.png" />
+    <Content Include="assets\img\about-page\team\nav-2.png" />
+    <Content Include="assets\img\about-page\team\nav-3.png" />
+    <Content Include="assets\img\about-page\team\nav-4.png" />
+    <Content Include="assets\img\about-page\team\slider-1.png" />
+    <Content Include="assets\img\arrow\next-arrow.png" />
+    <Content Include="assets\img\art-rep.jpg" />
+    <Content Include="assets\img\avatar.png" />
+    <Content Include="assets\img\baby.png" />
+    <Content Include="assets\img\bg\breadcrumb-bg.html" />
+    <Content Include="assets\img\blog-bg.html" />
+    <Content Include="assets\img\blog-page\blog-add.png" />
+    <Content Include="assets\img\blog-page\blog-item-01.png" />
+    <Content Include="assets\img\blog-page\blog-item-02.png" />
+    <Content Include="assets\img\blog-page\blog-item-03.png" />
+    <Content Include="assets\img\blog-page\blog-item-04.png" />
+    <Content Include="assets\img\blog-page\blog-item-bg.png" />
+    <Content Include="assets\img\blog-page\blog-single-01.png" />
+    <Content Include="assets\img\blog-page\blog-single-02.png" />
+    <Content Include="assets\img\blog-page\instagram-01.png" />
+    <Content Include="assets\img\blog-page\instagram-02.png" />
+    <Content Include="assets\img\blog-page\instagram-03.png" />
+    <Content Include="assets\img\blog-page\instagram-04.png" />
+    <Content Include="assets\img\blog-page\instagram-05.png" />
+    <Content Include="assets\img\blog-page\instagram-06.png" />
+    <Content Include="assets\img\blog-page\instagram-07.png" />
+    <Content Include="assets\img\blog-page\instagram-08.png" />
+    <Content Include="assets\img\blog-page\instagram-09.png" />
+    <Content Include="assets\img\blog-page\single-blog-author.png" />
+    <Content Include="assets\img\blog-page\single-post-01.png" />
+    <Content Include="assets\img\blog-page\single-post-02.png" />
+    <Content Include="assets\img\blog-page\single-post-03.png" />
+    <Content Include="assets\img\blog-page\single-post-04.png" />
+    <Content Include="assets\img\blog-page\slide1.png" />
+    <Content Include="assets\img\blog-page\slide2.png" />
+    <Content Include="assets\img\button-page\banner-bg.html" />
+    <Content Include="assets\img\cart-page\banner-bg.png" />
+    <Content Include="assets\img\cart-page\banner-bg2.png" />
+    <Content Include="assets\img\cart-page\banner-bg3.png" />
+    <Content Include="assets\img\cart-popup-page\cart-1.png" />
+    <Content Include="assets\img\cart-popup-page\cart-2.png" />
+    <Content Include="assets\img\cart-popup-page\cart-3.png" />
+    <Content Include="assets\img\cart-tab-page\cart-1.png" />
+    <Content Include="assets\img\cart-tab-page\cart-2.png" />
+    <Content Include="assets\img\cart-tab-page\cart-3.png" />
+    <Content Include="assets\img\cart-tab-page\icon-1.png" />
+    <Content Include="assets\img\cart-tab-page\icon-2.png" />
+    <Content Include="assets\img\cart-tab-page\payment\master-card.png" />
+    <Content Include="assets\img\cart-tab-page\payment\paypal.png" />
+    <Content Include="assets\img\cart-tab-page\payment\visa.png" />
+    <Content Include="assets\img\cart-tab-page\thanks.png" />
+    <Content Include="assets\img\coming-soon-page\coming-soon-bg.png" />
+    <Content Include="assets\img\coming-soon.png" />
+    <Content Include="assets\img\contact-us-page\contact-bg.jpg" />
+    <Content Include="assets\img\contact-us-page\contact-img.jpg" />
+    <Content Include="assets\img\faq-page\faq-bg.jpg" />
+    <Content Include="assets\img\fashion-woman.jpg" />
+    <Content Include="assets\img\form-page\banner-bg.html" />
+    <Content Include="assets\img\gavel.jpg" />
+    <Content Include="assets\img\gravel.png" />
+    <Content Include="assets\img\header-page\mega-menu.jpg" />
+    <Content Include="assets\img\home-1\banner\slide-1.2.png" />
+    <Content Include="assets\img\home-1\banner\slide-1.png" />
+    <Content Include="assets\img\home-1\banner\slide-2.jpg" />
+    <Content Include="assets\img\home-1\banner\slide-3.jpg" />
+    <Content Include="assets\img\home-1\banner\slide-4.jpg" />
+    <Content Include="assets\img\home-1\banner\slide-5.jpg" />
+    <Content Include="assets\img\home-1\category\cat-1.png" />
+    <Content Include="assets\img\home-1\category\cat-2.png" />
+    <Content Include="assets\img\home-1\category\cat-3.png" />
+    <Content Include="assets\img\home-1\category\cat-4.png" />
+    <Content Include="assets\img\home-1\category\cat-5.png" />
+    <Content Include="assets\img\home-1\client\client-bg.png" />
+    <Content Include="assets\img\home-1\client\slide-1.png" />
+    <Content Include="assets\img\home-1\client\slide-2.png" />
+    <Content Include="assets\img\home-1\collection\collection.png" />
+    <Content Include="assets\img\home-1\discount\discount-1.png" />
+    <Content Include="assets\img\home-1\discount\discount-2.png" />
+    <Content Include="assets\img\home-1\discount\discount-3.png" />
+    <Content Include="assets\img\home-1\gallery\gallery-1.png" />
+    <Content Include="assets\img\home-1\gallery\gallery-2.png" />
+    <Content Include="assets\img\home-1\gallery\gallery-3.png" />
+    <Content Include="assets\img\home-1\instagram\instagram-1.png" />
+    <Content Include="assets\img\home-1\instagram\instagram-2.png" />
+    <Content Include="assets\img\home-1\instagram\instagram-3.png" />
+    <Content Include="assets\img\home-1\instagram\instagram-4.png" />
+    <Content Include="assets\img\home-1\instagram\instagram-5.png" />
+    <Content Include="assets\img\home-1\instagram\instagram-6.png" />
+    <Content Include="assets\img\home-1\newsletter\newsletter-bg.png" />
+    <Content Include="assets\img\home-1\pick\pick-1.png" />
+    <Content Include="assets\img\home-1\pick\pick-2.jpg" />
+    <Content Include="assets\img\home-1\pick\pick-3.jpg" />
+    <Content Include="assets\img\home-1\pick\pick-4.png" />
+    <Content Include="assets\img\home-1\service\item-1.png" />
+    <Content Include="assets\img\home-1\service\item-2.png" />
+    <Content Include="assets\img\home-1\service\item-3.png" />
+    <Content Include="assets\img\home-1\service\item-4.png" />
+    <Content Include="assets\img\home-1\video\video-bg.png" />
+    <Content Include="assets\img\home-2\banner\banner-1.png" />
+    <Content Include="assets\img\home-2\banner\banner-10.png" />
+    <Content Include="assets\img\home-2\banner\banner-2.png" />
+    <Content Include="assets\img\home-2\banner\banner-3.png" />
+    <Content Include="assets\img\home-2\banner\banner-4.png" />
+    <Content Include="assets\img\home-2\banner\banner-5.png" />
+    <Content Include="assets\img\home-2\banner\banner-6.png" />
+    <Content Include="assets\img\home-2\banner\banner-7.png" />
+    <Content Include="assets\img\home-2\banner\banner-8.png" />
+    <Content Include="assets\img\home-2\banner\banner-9.png" />
+    <Content Include="assets\img\home-2\banner\banner-bg.jpg" />
+    <Content Include="assets\img\home-2\banner\banner-bg2.png" />
+    <Content Include="assets\img\home-2\banner\banner-bg3.png" />
+    <Content Include="assets\img\home-2\banner\banner-bg4.png" />
+    <Content Include="assets\img\home-2\banner\banner-bg5.png" />
+    <Content Include="assets\img\home-3\banner\item-1.png" />
+    <Content Include="assets\img\home-3\banner\item-2.png" />
+    <Content Include="assets\img\home-3\banner\item-3.png" />
+    <Content Include="assets\img\home-gallery.jpg" />
+    <Content Include="assets\img\home-woman.jpg" />
+    <Content Include="assets\img\icons-page\banner-bg.html" />
+    <Content Include="assets\img\image-overlay\banner-bg.png" />
+    <Content Include="assets\img\image-overlay\user.png" />
+    <Content Include="assets\img\sellers\image1.jpg" />
+    <Content Include="assets\img\image15.jpg" />
+    <Content Include="assets\img\image20.jpg" />
+    <Content Include="assets\img\sellers\image21.jpg" />
+    <Content Include="assets\img\image29.jpg" />
+    <Content Include="assets\img\landscape.jpg" />
+    <Content Include="assets\img\live-chat-page\chat-1.png" />
+    <Content Include="assets\img\live-chat-page\chat-2.png" />
+    <Content Include="assets\img\live-chat-page\chat-3.png" />
+    <Content Include="assets\img\logo\logo.png" />
+    <Content Include="assets\img\logo\logo2.png" />
+    <Content Include="assets\img\logo\white-logo.png" />
+    <Content Include="assets\img\louvre.jpg" />
+    <Content Include="assets\img\man-art.jpg" />
+    <Content Include="assets\img\modal-page\banner-bg.html" />
+    <Content Include="assets\img\modal-page\modal-image.png" />
+    <Content Include="assets\img\monalisa.jpg" />
+    <Content Include="assets\img\pagination-page\banner-bg.html" />
+    <Content Include="assets\img\popup-info.html" />
+    <Content Include="assets\img\profile-page\banner-bg.png" />
+    <Content Include="assets\img\profile-page\order-page\cart-1.png" />
+    <Content Include="assets\img\profile-page\order-page\cart-2.png" />
+    <Content Include="assets\img\profile-page\order-page\cart-3.png" />
+    <Content Include="assets\img\profile-page\order-page\purchases.html" />
+    <Content Include="assets\img\profile-page\profile.png" />
+    <Content Include="assets\img\profile-page\save-page\save1.png" />
+    <Content Include="assets\img\profile-page\save-page\save2.png" />
+    <Content Include="assets\img\profile-page\save-page\save3.png" />
+    <Content Include="assets\img\profile-page\save-page\save4.png" />
+    <Content Include="assets\img\profile-page\save-page\save5.png" />
+    <Content Include="assets\img\returns-page\banner-bg.png" />
+    <Content Include="assets\img\shop-page\item1.png" />
+    <Content Include="assets\img\shop-page\item3.png" />
+    <Content Include="assets\img\shop-page\item4.png" />
+    <Content Include="assets\img\shop-page\item5.png" />
+    <Content Include="assets\img\shop-page\item6.png" />
+    <Content Include="assets\img\shop-page\item7.png" />
+    <Content Include="assets\img\shop-page\slide1.png" />
+    <Content Include="assets\img\shop-page\slide2.png" />
+    <Content Include="assets\img\shop-page\slide3.png" />
+    <Content Include="assets\img\shop-page\slide4.png" />
+    <Content Include="assets\img\single-blog\banner-bg.png" />
+    <Content Include="assets\img\single-blog\blog-repeat.png" />
+    <Content Include="assets\img\single-blog\post-1.png" />
+    <Content Include="assets\img\single-blog\post-2.png" />
+    <Content Include="assets\img\single-blog\review-1.png" />
+    <Content Include="assets\img\single-blog\review-2.png" />
+    <Content Include="assets\img\single-blog\review-3.png" />
+    <Content Include="assets\img\slide-three.html" />
+    <Content Include="assets\img\sellers\lizzy.jpg" />
+    <Content Include="assets\img\Snapinsta.app_453069933_18450134599010336_6479081006221246500_n_1080.jpg" />
+    <Content Include="assets\img\under-construction-page\error.png" />
+    <Content Include="assets\img\sellers\Wanda.jpg" />
+    <Content Include="assets\img\sellers\woman-africa.jpg" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\cookiealert.js" />
+    <Content Include="assets\js\countdown.js" />
+    <Content Include="assets\js\datepicker-en.js" />
+    <Content Include="assets\js\datepicker.min.js" />
+    <Content Include="assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="assets\js\isotope.pkgd.min.js" />
+    <Content Include="assets\js\jquery-2.2.4.min.js" />
+    <Content Include="assets\js\jquery.counterup.min.js" />
+    <Content Include="assets\js\jquery.datetimepicker.full.min.js" />
+    <Content Include="assets\js\jquery.magnific-popup.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\slick.min.js" />
+    <Content Include="assets\js\waypoints.min.js" />
+    <Content Include="assets\js\wow.min.js" />
+    <Content Include="Cart.aspx" />
+    <Content Include="CartAdd.aspx" />
+    <Content Include="CartRemove.aspx" />
+    <Content Include="ChangeState.aspx" />
+    <Content Include="Checkout.aspx" />
+    <Content Include="Connected Services\ServiceReference\Project_Backup.ServiceReference.BidDT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference\Project_Backup.ServiceReference.CartDT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference\Project_Backup.ServiceReference.CustomerDT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference\Project_Backup.ServiceReference.InvoiceDT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference\Project_Backup.ServiceReference.Notification.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference\Project_Backup.ServiceReference.ProductDT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference\Project_Backup.ServiceReference.SellerDT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference\Project_Backup.ServiceReference.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference\Service1.disco" />
+    <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Wishlist.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="DeleteProduct.aspx" />
+    <Content Include="EditProduct.aspx" />
+    <Content Include="EndBid.aspx" />
+    <Content Include="FinanceReports.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="InverstorsPortal.aspx" />
+    <Content Include="OrderCompleted.aspx" />
+    <Content Include="OrderSummary.aspx" />
+    <Content Include="Payment.aspx" />
+    <Content Include="PlaceBid.aspx" />
+    <Content Include="Product.aspx" />
+    <Content Include="ProductReports.aspx" />
+    <Content Include="Profile.aspx" />
+    <Content Include="RemoveProductCart.aspx" />
+    <Content Include="SellerDetails.aspx" />
+    <Content Include="SellerRegistration.aspx" />
+    <Content Include="Shop.aspx" />
+    <Content Include="SingleInvoice.aspx" />
+    <Content Include="UserReports.aspx" />
+    <Content Include="ViewInvoices.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AboutArtisans.aspx.cs">
+      <DependentUpon>AboutArtisans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutArtisans.aspx.designer.cs">
+      <DependentUpon>AboutArtisans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActiveBids.aspx.cs">
+      <DependentUpon>ActiveBids.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActiveBids.aspx.designer.cs">
+      <DependentUpon>ActiveBids.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAccessory.aspx.cs">
+      <DependentUpon>AddAccessory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddAccessory.aspx.designer.cs">
+      <DependentUpon>AddAccessory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddArt.aspx.cs">
+      <DependentUpon>AddArt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddArt.aspx.designer.cs">
+      <DependentUpon>AddArt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddClothing.aspx.cs">
+      <DependentUpon>AddClothing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddClothing.aspx.designer.cs">
+      <DependentUpon>AddClothing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddFunds.aspx.cs">
+      <DependentUpon>AddFunds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFunds.aspx.designer.cs">
+      <DependentUpon>AddFunds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AlmostThere.aspx.cs">
+      <DependentUpon>AlmostThere.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlmostThere.aspx.designer.cs">
+      <DependentUpon>AlmostThere.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CartAdd.aspx.cs">
+      <DependentUpon>CartAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CartAdd.aspx.designer.cs">
+      <DependentUpon>CartAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CartRemove.aspx.cs">
+      <DependentUpon>CartRemove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CartRemove.aspx.designer.cs">
+      <DependentUpon>CartRemove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeState.aspx.cs">
+      <DependentUpon>ChangeState.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeState.aspx.designer.cs">
+      <DependentUpon>ChangeState.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteProduct.aspx.cs">
+      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteProduct.aspx.designer.cs">
+      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EndBid.aspx.cs">
+      <DependentUpon>EndBid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EndBid.aspx.designer.cs">
+      <DependentUpon>EndBid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceReports.aspx.cs">
+      <DependentUpon>FinanceReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinanceReports.aspx.designer.cs">
+      <DependentUpon>FinanceReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InverstorsPortal.aspx.cs">
+      <DependentUpon>InverstorsPortal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InverstorsPortal.aspx.designer.cs">
+      <DependentUpon>InverstorsPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderCompleted.aspx.cs">
+      <DependentUpon>OrderCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderCompleted.aspx.designer.cs">
+      <DependentUpon>OrderCompleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSummary.aspx.cs">
+      <DependentUpon>OrderSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderSummary.aspx.designer.cs">
+      <DependentUpon>OrderSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceBid.aspx.cs">
+      <DependentUpon>PlaceBid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlaceBid.aspx.designer.cs">
+      <DependentUpon>PlaceBid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReports.aspx.cs">
+      <DependentUpon>ProductReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductReports.aspx.designer.cs">
+      <DependentUpon>ProductReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveProductCart.aspx.cs">
+      <DependentUpon>RemoveProductCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RemoveProductCart.aspx.designer.cs">
+      <DependentUpon>RemoveProductCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Secrecy.cs" />
+    <Compile Include="SellerDetails.aspx.cs">
+      <DependentUpon>SellerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellerDetails.aspx.designer.cs">
+      <DependentUpon>SellerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellerRegistration.aspx.cs">
+      <DependentUpon>SellerRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellerRegistration.aspx.designer.cs">
+      <DependentUpon>SellerRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop.aspx.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop.aspx.designer.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SingleInvoice.aspx.cs">
+      <DependentUpon>SingleInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SingleInvoice.aspx.designer.cs">
+      <DependentUpon>SingleInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserReports.aspx.cs">
+      <DependentUpon>UserReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserReports.aspx.designer.cs">
+      <DependentUpon>UserReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInvoices.aspx.cs">
+      <DependentUpon>ViewInvoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewInvoices.aspx.designer.cs">
+      <DependentUpon>ViewInvoices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wishlist.aspx.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wishlist.aspx.designer.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="assets\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\fonts\Linearicons-Free.woff2" />
+    <Content Include="assets\fonts\Linearicons-Free54e9.eot" />
+    <Content Include="assets\fonts\Linearicons-Free54e9.ttf" />
+    <Content Include="assets\fonts\Linearicons-Free54e9.woff" />
+    <Content Include="assets\fonts\Linearicons-Freed41d.eot" />
+    <Content Include="assets\fonts\themify9f24.eot" />
+    <Content Include="assets\fonts\themify9f24.ttf" />
+    <Content Include="assets\fonts\themify9f24.woff" />
+    <Content Include="assets\fonts\themifyd41d.eot" />
+    <None Include="Connected Services\ServiceReference\Service1.wsdl" />
+    <None Include="Connected Services\ServiceReference\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Site.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="assets\img\products\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56093</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56093/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

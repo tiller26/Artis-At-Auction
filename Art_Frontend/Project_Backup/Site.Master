@@ -1,0 +1,363 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Project_Backup.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Roberto Ferracini – Fashion and Clothing Shop Template</title>
+    <!-- favicon -->
+    <link rel="icon" href="favicon.png" sizes="20x20" type="image/png">
+    <!-- animate -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!-- flaticon -->
+    <link rel="stylesheet" href="assets/css/linearicons.css">
+
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- responsive Stylesheet -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body runat="server">
+    <!-- preloader area start -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader area end -->
+    <form runat="server">
+
+        <!-- cart-popup-starts -->
+        <div class="cart-popup" id="cart-popup">
+            <div class="cart-content">
+                <span class="cross-icon"><i class="lnr lnr-cross"></i></span>
+                <div class="cart-title text-center">
+                    <h2>Cart</h2>
+                    <h6 runat="server" id="itemsCount" class="text-right">
+                        <!-- Total items -->
+                    </h6>
+                </div>
+
+                <div runat="server" id="cartContents" class="cart-items">
+                    <!-- Items go here -->
+                </div>
+
+                <div class="row">
+                    <div class="col-12 total-price text-right">
+                        <h4>Total</h4>
+                        <h3 runat="server" id="cartTotal">$ 158,00</h3>
+                    </div>
+                    <div hidden class="col-6 total-price text-right">
+                        <h4>VAT</h4>
+                        <h3 runat="server" id="vat">$ 158,00</h3>
+                    </div>
+                </div>
+
+                <div class="cart-buttons mt-4 mt-xl-5">
+                    <a href="Cart.aspx" class="template-btn2 off2 mb-4">View Cart <span>&rharu;</span></a>
+                </div>
+            </div>
+        </div>
+        <!-- cart-popup-end -->
+
+        <!-- Login PopUp Starts -->
+        <div runat="server" id="loginPopup" class="login-popup">
+
+            <div class="login-content">
+                <span class="cross-icon"><i class="lnr lnr-cross"></i></span>
+                <div class="cart-title text-center">
+                    <h2>Login Here</h2>
+                </div>
+
+                <!-- Login Sections Starts -->
+                <div id="frmLogin">
+                    <div class="input-group mb-40">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+                        </div>
+                        <input id="loginUsername" runat="server" type="text" class="form-control" placeholder="Ferracini@example.com" aria-label="Username" aria-describedby="basic-addon1" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon2"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <input runat="server" id="loginPassword" type="password" class="form-control" placeholder="**********" aria-label="password" aria-describedby="basic-addon2">
+                    </div>
+                    <div class="text-left">
+                        <span runat="server" id="loginFailed" hidden="hidden" class="text-danger font-weight-bold">Incorrect email or password</span>
+                    </div>
+                    <div class="text-right">
+                        <a href="#" class="when-click-forgot-password">Forgot Password?</a>
+                    </div>
+                    <!-- Login Button -->
+                    <button class="template-btn2 mt-5" runat="server" onserverclick="btnLogin_OnClick">Login <span>&rharu;</span></button>
+                    
+                </div>
+
+                <div class="login-bottom text-center">
+                    <p>You don’t have an account? <a href="#" class="when-click-signup">Sign up</a></p>
+                </div>
+            </div>
+            <!-- Login Sections Ends -->
+
+            <!-- Signup Sections Starts -->
+            <div class="signup-content">
+                <span class="cross-icon"><i class="lnr lnr-cross"></i></span>
+                <div class="cart-title text-center mb-5">
+                    <h2>Sign Up</h2>
+                </div>
+
+                <div id="frmSignup">
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user-o"></i></span>
+                        </div>
+                        <input runat="server" id="uName" type="text" class="form-control" placeholder="Enter Username">
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+                        </div>
+                        <input runat="server" id="uEmail" type="email" class="form-control" placeholder="Enter Email">
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <input runat="server" id="uPassowrd" type="password" class="form-control" placeholder="Create Password">
+                    </div>
+                    <div class="input-group mb-5">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                        </div>
+                        <input runat="server" id="uContact" type="number" class="form-control" placeholder="Contact Number">
+                    </div>
+
+                    <%--<div class="check-option mt-5">
+                        <input type="checkbox" id="checkbox" class="mb-3" />
+                        <label for="checkbox" class="ml-3">Accept Terms & Conditions</label>
+                        <br>
+
+                        <input type="checkbox" id="checkbox2" />
+                        <label for="checkbox2" class="ml-3">Yes, I’d love to receive emails with great content And updates</label>
+                    </div>--%>
+                    <!-- Signup Button -->
+                    <button runat="server" onserverclick="btnRegister_OnClick" type="submit" class="template-btn2 mt-5">Sign Up <span>&rharu;</span></button>
+                </div>
+
+                <div class="login-bottom text-center">
+                    <p>You don’t have an account? <a href="#" class="when-click-login">Login </a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Signup PopUp End -->
+
+        <!-- navbar area starts -->
+        <nav class="navbar navbar-area navbar-expand-lg nav-style-02 nav-absolute">
+            <div class="container-fluid nav-container">
+                <div class="responsive-mobile-menu">
+                    <div class="logo-wrapper mt-3">
+                        <a href="Home.aspx" class="logo">
+                            <h5 style="color: #DEAC80; font-family: 'Lucida Handwriting',cursive;">Artis<br />
+                                At
+                                <br />
+                                Auction</h5>
+                            <%--<hr style="background-color:#DEAC80; margin-top:-5px; height:2px;" />--%>
+                            <%--<img src="assets/img/logo/logo.png" alt="logo">--%>
+                            <%--<h4>robarto
+                                <br>
+                                ferracini</h4>--%>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bizcoxx_main_menu"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bizcoxx_main_menu">
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="Home.aspx" style="color: #DEAC80">Home</a>
+                        </li>
+                        <li>
+                            <a href="Shop.aspx" style="color: #DEAC80">Shop</a>
+                        </li>
+                        <li>
+                            <a href="About.aspx" style="color: #DEAC80">About Us</a>
+                        </li>
+                        <li>
+                            <a href="ContactUs.aspx" style="color: #DEAC80">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="AboutArtisans.aspx" style="color: #DEAC80">View Artisans</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-right-content">
+                    <ul>
+                        <%--<li class="search" id="search">
+                            <span class="lnr lnr-magnifier"></span>
+                        </li>--%>
+<%--                        <li runat="server" title="Wishlist" id="wishlist" class="ml-3 floating-icon-3">
+                            <a href="Wishlist.aspx">
+                                <span style="color: #DEAC80" class="fa fa-star-o"></span>
+                            </a>
+                        </li>--%>
+                        <li runat="server" id="profileGuest" class="ml-3 floating-icon-3 user">
+                            <span style="color: #DEAC80" class="lnr lnr-user"></span>
+                        </li>
+                        <li runat="server" id="profileLogged" class="user-image">
+                            <a title="View Profile" href="Profile.aspx">
+                                <img width="30" height="30" src="assets/img/image-overlay/user.png" alt=""></a>
+                        </li>
+                        <li title="View Cart" runat="server" id="cartIcon" class="cart floating-icon-1 ml-4">
+                            <div class="cart-sec">
+                                <a href="#"><span style="color: #DEAC80" class="lnr lnr-cart"></span></a>
+                                <span runat="server" id="cartCount" class="cart-count">2</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- navbar area end -->
+
+        <!-- contents go here -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+    <!-- Instagram Starts -->
+    <section runat="server" id="recommendedProducts" class="instagram-area section-padding-top3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2>our gallery</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 px-0">
+                    <div runat="server" id="sllrs" class="instagram-slider owl-carousel">
+                        <!-- Product images go here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Instagram End -->
+
+    <!-- Footer Starts -->
+    <footer class="footer-area">
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="footer-widget widget widget_nav_menu">
+                            <h5 class="widget-title">quick links</h5>
+                            <ul>
+                                <li><a runat="server" onserverclick="SellOnSite" href="SellerRegistration.aspx">become a seller</a></li>
+                                <li><a href="About.aspx">about us</a></li>
+                                <%-- <li><a href="InverstorsPortal.aspx">investors portal</a></li>--%>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="footer-widget widget">
+                            <h5 class="widget-title">newsletter</h5>
+                            <p>
+                                Sign up to Artis At Aution newsletter
+                            </p>
+                            <form action="#" class="mt-4">
+                                <input type="email" class="" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address'">
+                                <button type="submit"><span>&rharu;</span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 d-md-flex justify-content-between">
+                        <div class="copyright-logo align-self-center">
+                            <a href="index-2.html">
+                                <img src="assets/img/logo/logo2.png" alt=""></a>
+                        </div>
+                        <div class="copyright-content align-self-center text-center">
+                            &copy; Copyright 2024
+                   
+                        </div>
+                        <div class="copyright-link align-self-center">
+                            <ul>
+                                <li><a href="#">instagram</a></li>
+                                <li><a href="#">facebook</a></li>
+                                <li><a href="#">twitter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- back to top area start -->
+    <div class="back-to-top">
+        <span>Back to top</span>
+    </div>
+    <!-- back to top area end -->
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-2.2.4.min.js"></script>
+    <!-- popper -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- magnific popup -->
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <!-- wow -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- owl carousel -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- waypoint -->
+    <script src="assets/js/waypoints.min.js"></script>
+    <!-- counterup -->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- imageloaded -->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- isotope -->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+
+    <script src="assets/js/jquery.datetimepicker.full.min.js"></script>
+
+    <script src="assets/js/countdown.js"></script>
+    <!-- slick -->
+    <script src="assets/js/slick.min.js"></script>
+
+    <!-- Datepicker -->
+    <script src="assets/js/datepicker.min.js"></script>
+    <script src="assets/js/datepicker-en.js"></script>
+
+    <!-- main js -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
